@@ -1,0 +1,17 @@
+cached tests met:
+    avgMin  medianMin
+    avgHour medianHour
+    avgDay  medianDay
+
+    avgMin_timestamps   medianMin_timestamps
+    avgHour_timestamps  medianHour_timestamps
+    avgDay_timestamps   medianDay_timestamps
+
+uncached tests met:
+    avgMin  medianMin
+    avgHour medianHour
+    avgDay  medianDay
+
+    avgMin_timestamps   medianMin_timestamps
+    avgHour_timestamps  medianHour_timestamps
+    avgDay_timestamps   medianDay_timestamps
