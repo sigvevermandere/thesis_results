@@ -40,7 +40,7 @@ raw_answers = range(len(data['rawAvgMin_ts']))
 summaries_answers = list(raw_answers) + [raw_answers[-1]]
 plt.rc('axes', labelsize=12)
 fig, axs = plt.subplots(3, 1)
-st = fig.suptitle("Bandwidth usage comparison between server side and client side summaries", fontsize="x-large")
+st = fig.suptitle("Bandwidth usage comparison between server side\n and client side average summaries for cached fragments", fontsize="x-large")
 
 axs[0].plot(data['rawAvgMin_ts'], data['rawAvgMin'], label="Client Side")
 axs[0].plot(data['summariesAvgMin_ts'], data['summariesAvgMin'], label="Server Side")
@@ -74,8 +74,7 @@ fig.set_size_inches(4, 9)
 fig.canvas.draw()
 fig.set_tight_layout(False)
 st.set_y(0.95)
-fig.subplots_adjust(top=0.88)
-
+fig.subplots_adjust(top=0.86)
 
 # fig.set_size_inches(4, 12)
 # fig.set_tight_layout(True)

@@ -39,11 +39,11 @@ raw_answers = range(len(data['rawAvgMin_ts']))
 summaries_answers = list(raw_answers) + [raw_answers[-1]]
 plt.rc('axes', labelsize=12)
 fig, axs = plt.subplots(3, 2)
-
+st = fig.suptitle("Diefficiency comparison between server side\n and client side average summaries for cached fragments", fontsize="17")
 
 axs[0, 0].plot(data['rawAvgMin_ts'], raw_answers, label="Client Side")
 axs[0, 0].plot(data['summariesAvgMin_ts'], summaries_answers, label="Server Side")
-axs[0, 0].set_title('Average per minute: dief', size=15)
+axs[0, 0].set_title('Average per minute', size=15)
 axs[0, 0].set_xlabel('Milliseconds')
 axs[0, 0].set_ylabel('Answers')
 
@@ -54,7 +54,7 @@ axs[0, 0].add_patch(poly)
 
 axs[0, 1].plot(data['rawAvgMin_ts'], raw_answers, label="Client Side")
 axs[0, 1].plot(data['summariesAvgMin_ts'], summaries_answers, label="Server Side")
-axs[0, 1].set_title('Average per minute: dief', size=15)
+axs[0, 1].set_title('Average per minute', size=15)
 axs[0, 1].set_xlabel('Milliseconds')
 axs[0, 1].set_ylabel('Answers')
 
@@ -65,7 +65,7 @@ axs[0, 1].add_patch(poly)
 
 axs[1, 0].plot(data['rawAvgHour_ts'], raw_answers, label="Client Side")
 axs[1, 0].plot(data['summariesAvgHour_ts'], summaries_answers, label="Server Side")
-axs[1, 0].set_title('Average per hour: dief', size=15)
+axs[1, 0].set_title('Average per hour', size=15)
 axs[1, 0].set_xlabel('Milliseconds')
 axs[1, 0].set_ylabel('Answers')
 
@@ -76,7 +76,7 @@ axs[1, 0].add_patch(poly)
 
 axs[1, 1].plot(data['rawAvgHour_ts'], raw_answers, label="Client Side")
 axs[1, 1].plot(data['summariesAvgHour_ts'], summaries_answers, label="Server Side")
-axs[1, 1].set_title('Average per hour: dief', size=15)
+axs[1, 1].set_title('Average per hour', size=15)
 axs[1, 1].set_xlabel('Milliseconds')
 axs[1, 1].set_ylabel('Answers')
 
@@ -89,7 +89,7 @@ day_answers = list(range(len(data['summariesAvgDay_ts']) - 1))
 day_answers.append(day_answers[-1])
 axs[2, 0].plot(data['rawAvgDay_ts'], range(len(data['rawAvgDay_ts'])), label="Client Side")
 axs[2, 0].plot(data['summariesAvgDay_ts'], day_answers, label="Server Side")
-axs[2, 0].set_title('Average per day: dief', size=15)
+axs[2, 0].set_title('Average per day', size=15)
 axs[2, 0].set_xlabel('Milliseconds')
 axs[2, 0].set_ylabel('Answers')
 
@@ -100,7 +100,7 @@ axs[2, 0].add_patch(poly)
 
 axs[2, 1].plot(data['rawAvgDay_ts'], range(len(data['rawAvgDay_ts'])), label="Client Side")
 axs[2, 1].plot(data['summariesAvgDay_ts'], day_answers, label="Server Side")
-axs[2, 1].set_title('Average per day: dief', size=15)
+axs[2, 1].set_title('Average per day', size=15)
 axs[2, 1].set_xlabel('Milliseconds')
 axs[2, 1].set_ylabel('Answers')
 
@@ -118,6 +118,10 @@ fig.set_tight_layout(True)
 # fig.set_tight_layout(False)
 # plt.subplots_adjust(right=0.8)
 fig.set_size_inches(8, 9)
+fig.canvas.draw()
+fig.set_tight_layout(False)
+st.set_y(0.95)
+fig.subplots_adjust(top=0.86)
 
 #fig.show()
 plt.savefig("uncachedAverageDief.png", dpi=100)
