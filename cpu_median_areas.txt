@@ -1,0 +1,8 @@
+Server Side: 
+Node 1	Node 2
+Minute: 16.749832765	17.476131443
+Hour: 15.112660088	16.168372289
+Client Side: 
+Node 1	Node 2
+Minute: 18.188931586	18.5566911
+Hour: 18.188931586	18.5566911

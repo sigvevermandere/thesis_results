@@ -1,0 +1,4 @@
+Server Side: 
+Hour: 1558050.5
+Client Side: 
+Hour: 814201.5

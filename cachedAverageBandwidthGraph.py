@@ -81,4 +81,15 @@ fig.subplots_adjust(top=0.86)
 #fig.show()
 plt.savefig("cachedAverageBandwidth.png", dpi=100)
 
+f = open("cachedAverageBandwidthGraph_areas.txt", "w+")
+f.write("Server Side: \n")
+f.write("Minute: " + str(data['summariesAvgMin'][-1]) + "\n")
+f.write("Hour: " + str(data['summariesAvgHour'][-1]) + "\n")
+f.write("Day: " + str(data['summariesAvgDay'][-1]) + "\n")
+f.write("Client Side: \n")
+f.write("Minute: " + str(data['rawAvgMin'][-1]) + "\n")
+f.write("Hour: " + str(data['rawAvgHour'][-1]) + "\n")
+f.write("Day: " + str(data['rawAvgDay'][-1]) + "\n")
+f.close()
+
 
